@@ -22,7 +22,9 @@ console.log('Emergency routes loaded:', typeof emergencyRoutes);
 console.log('Loading alert routes...');
 const alertRoutes = require('./routes/alert.routes');
 console.log('Alert routes loaded:', typeof alertRoutes);
-
+app.use('/', () => {
+  console.log('Base route accessed');
+});
 app.use('/api/hospitals', hospitalRoutes);
 app.use('/api/emergency', emergencyRoutes);
 app.use('/api/alert', alertRoutes);
