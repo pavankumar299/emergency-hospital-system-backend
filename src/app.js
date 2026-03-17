@@ -22,8 +22,9 @@ console.log('Emergency routes loaded:', typeof emergencyRoutes);
 console.log('Loading alert routes...');
 const alertRoutes = require('./routes/alert.routes');
 console.log('Alert routes loaded:', typeof alertRoutes);
-app.use('/', () => {
+app.get('/', (req, res) => {
   console.log('Base route accessed');
+  res.send('Backend is running 🚀');
 });
 app.use('/api/hospitals', hospitalRoutes);
 app.use('/api/emergency', emergencyRoutes);
